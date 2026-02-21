@@ -6,5 +6,5 @@ const asyncHandle =(requestFunction)=>{
         })
     }
 }
-
+    
 export {asyncHandle}
