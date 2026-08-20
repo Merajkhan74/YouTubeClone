@@ -1,4 +1,4 @@
-# YouTube Clone — Backend API
+# YouTube — Backend 
 
 A backend REST API for a video-sharing platform, inspired by YouTube. Built with **Node.js, Express, and MongoDB**, it implements secure JWT-based authentication, cloud file uploads, and MongoDB aggregation pipelines for features like subscriber counts and watch history.
 
