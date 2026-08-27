@@ -25,28 +25,11 @@ const generateAccessAndRefreshTokem = async (userId) => {
       "someting went to wrong while grnerate refersh  and Access token "
     );
   }
-  //   catch (error) {
-  //   console.log("🔥🔥 REAL ERROR FROM TOKEN FUNCTION 🔥🔥");
-  //   console.log(error);
-  //   console.log("🔥🔥 END 🔥🔥");
-  //   throw error; // VERY IMPORTANT
-  // }
+
 };
 
 const registerUser = asyncHandle(async (req, res) => {
-  // res.status(200).json({
-  //     message :'ok'
-  // })
-
-  //get user details  from frontend / user
-  // validation  - not empty
-  // check if user is already exist : username , email ,
-  // check your image and check your avatar
-  // upload them to cloudnary avatar
-  // create your object  create entry avatar in db
-  // remove password and refresh token field from response
-  //   check user creation
-  // return res
+  
 
   const { fullName, email, userName, password } = req.body;
   // console.log(req.body)
@@ -121,16 +104,6 @@ const registerUser = asyncHandle(async (req, res) => {
 
 const loginUser = asyncHandle(async (req, res) => {
   console.log("BODY:", req.body);
-
-  // request body
-  // userName or email
-  // find user
-  // password check
-  // access and refersh toen
-  // send cooke
-  //  return res
-
-  // request body
 
   const { userName, email, password } = req.body;
 
@@ -259,7 +232,7 @@ const ChangeCurrentPassword = asyncHandle(async (req, res) => {
     .json(new ApiResponse(200, {}, "Password Change Successfully"));
 });
 
-const getCurrentUser = asyncHandle(async (req, res) => {
+const getCurrentUser = asyncHandle(async (req, res) => { 
   return res
     .status(200)
     .json( new ApiResponse (200, req.user, "Current User Fatched successFully "));
@@ -416,7 +389,7 @@ const getWatchHistory = asyncHandle(async(req, res)=>{
     },
     {
       $lookup:{
-        from: "videos",
+        from: "video",
         localField: "watchHistory",
         foreignField: "_id",
         as:"watchHistory",
