@@ -18,6 +18,13 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 // router
+
+app.get("/", (req, res) => {
+    res.status(200).json({
+        status: "success",
+        message: "YouTube Backend API is running"
+    });
+});
 import userRouter from './routes/user.routes.js';
 app.use('/api/v2/users', userRouter);
 
