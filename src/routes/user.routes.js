@@ -17,6 +17,15 @@ import { upload } from "../middlewares/multer.middleware.js";
 import { verifyJWT } from "../middlewares/Auth.middlewares.js";
 const router = Router();
 
+
+router.get("/", (req, res) => {
+    res.status(200).json({
+        status: "success",
+        message: "YouTube Backend API is running"
+    });
+});
+
+
 router.route("/register").post(
   // this is middleware code :-  jate time mil ke jana
   upload.fields([
@@ -48,5 +57,6 @@ router
   .patch(verifyJWT, upload.single("coverImage"), updateUserCoverImage);
 router.route("/c/:userName").get(verifyJWT, getUserChannelProfile);
 router.route("/watch-history").get(verifyJWT, getWatchHistory);
+
 
 export default router;
